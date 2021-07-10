@@ -8,11 +8,11 @@ library(ggflags)
 library(countrycode)
 
 #Data source 
-fifa_men <- read_csv("Z:/ZW_R_DICT/Animated_plot/FIFA/fifa_men.csv")
+fifa_men <- read_csv("~/FIFA/fifa_men.csv")
 fifa_men$Category<-'Men'
 fifa_men
 
-fifa_women <- read_csv("Z:/ZW_R_DICT/Animated_plot/FIFA/fifa_women.csv")
+fifa_women <- read_csv("~/FIFA/fifa_women.csv")
 fifa_women$Category<-'Women'
 fifa_women
 
@@ -57,6 +57,7 @@ View(fifa_women_2)
 
 
 
+################### MEN #######################################
 fifa_men_2%>%
   #filter(date=='2005-01-19')%>%
   mutate(date_format = format(date, '%b %Y'),
@@ -92,7 +93,7 @@ animate(fifa_men_anim,duration = 200, fps = 10, end_pause = 40,
         height=500,width=600, res=100,renderer = gifski_renderer())
 
 
-###################WOMEN#######################################
+################### WOMEN #######################################
 fifa_women_2%>%
   #filter(date=='2003-07-16')%>%
   mutate(date_format = format(date, '%b %Y'),
